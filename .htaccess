@@ -13,10 +13,10 @@ RewriteRule . /riverside/index.php [L]
 
 #Secu
 <IfModule mod_rewrite.c>
-RewriteCond %{REQUEST_URI} !^/wp-content/plugins/file/to/exclude\.php
-RewriteRule wp-content/plugins/(.*\.php)$ - [R=404,L]
-RewriteCond %{REQUEST_URI} !^/wp-content/themes/file/to/exclude\.php
-RewriteRule wp-content/themes/(.*\.php)$ - [R=404,L]
+RewriteCond %{REQUEST_URI} !^/storage/plugins/file/to/exclude\.php
+RewriteRule storage/plugins/(.*\.php)$ - [R=404,L]
+RewriteCond %{REQUEST_URI} !^/storage/themes/file/to/exclude\.php
+RewriteRule storage/themes/(.*\.php)$ - [R=404,L]
 </IfModule>
 <FilesMatch "^.*(error_log|wp-config\.php|php.ini|\.[hH][tT][aApP].*)$">
     Require all denied
