@@ -12,10 +12,6 @@ define( 'WP_DEBUG_DISPLAY', false );
 define( 'SCRIPT_DEBUG', false );
 define( 'SAVEQUERIES', false );
 
-/* WordPress Cache */
-define( 'WP_CACHE', true );
-
-
 /* Compression */
 define( 'COMPRESS_CSS', true );
 define( 'COMPRESS_SCRIPTS', true );
@@ -28,11 +24,13 @@ define( 'DISALLOW_FILE_MODS', true );
 define( 'DISALLOW_FILE_EDIT', true );
 define( 'FS_CHMOD_DIR', ( 0755 & ~ umask() ) );
 define( 'FS_CHMOD_FILE', ( 0644 & ~ umask() ) );
-define( 'DISABLE_WP_CRON', true );
+
 define( 'EMPTY_TRASH_DAYS', 30 ); // 30 days
 
 /* Performance */
+define( 'WP_CACHE', true );
 define( 'WP_POST_REVISIONS', false );
+define( 'DISABLE_WP_CRON', true );
 
 /**
  * The base configuration for WordPress
