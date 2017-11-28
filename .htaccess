@@ -1,0 +1,28 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /riverside/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /riverside/index.php [L]
+</IfModule>
+
+# END WordPress
+
+#Secu
+<IfModule mod_rewrite.c>
+RewriteCond %{REQUEST_URI} !^/wp-content/plugins/file/to/exclude\.php
+RewriteRule wp-content/plugins/(.*\.php)$ - [R=404,L]
+RewriteCond %{REQUEST_URI} !^/wp-content/themes/file/to/exclude\.php
+RewriteRule wp-content/themes/(.*\.php)$ - [R=404,L]
+</IfModule>
+<FilesMatch "^.*(error_log|wp-config\.php|php.ini|\.[hH][tT][aApP].*)$">
+    Require all denied
+</FilesMatch>
+
+#Cache
+<FilesMatch "\.(js|ico|gif|jpg|png|css|html)$">
+Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
